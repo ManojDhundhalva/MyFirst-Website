@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instagram clone</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .maintext {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(96, 96, 96);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .left {
+            flex: 1.97;
+            margin-left: 60px;
+            margin-right: 60px;
+            margin-top: 36px;
+            padding-left: 245px;
+        }
+
+        .right {
+            /* background-color: lightblue; */
+            flex: 1;
+            padding-top: 52px;
+            padding-right: 60px;
+        }
+
+        .body-part {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 245px;
+            /* background-color: lightblue; */
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            bottom: 0;
+            top: 0;
+            border-right: 2px solid;
+            border-right-color: rgb(220, 220, 220);
+        }
+
+        .header {
+            /* background-color: lightblue; */
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            padding-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .photoshop {
+            height: 56px;
+            cursor: pointer;
+            border-radius: 60px;
+            border-width: 20px;
+            border-color: red;
+        }
+
+        .photo-button {
+            border-color: white;
+            border-width: 2px;
+            border-radius: 60px;
+            border-style: solid;
+            border-color: rgb(175, 175, 175);
+            width: 62px;
+            height: 62px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            margin-bottom: 6px;
+            margin-top: 6px;
+            margin-left: 9px;
+            margin-right: 9px;
+        }
+
+        .photo-button:hover {
+            border-color: rgb(215, 26, 26);
+        }
+
+        .text {
+            font-family: Arial;
+            font-size: 13px;
+            color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            /* background-color: lightpink; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .article {
+            /* background-color: lightblue; */
+            flex: 800px;
+            width: 470px;
+            margin-top: 12px;
+            border-width: 10px;
+        }
+
+        .profile-logo {
+            width: 32px;
+            border-radius: 16px;
+        }
+
+        .profile-logo-button {
+            background-color: white;
+            border-radius: 40px;
+            border-color: rgb(220, 220, 220);
+            border-style: solid;
+            height: 34px;
+            width: 34px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 4px 4px 4px 4px;
+            cursor: pointer;
+        }
+
+
+        .class-1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .class-1-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .class-1-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: rgb(96, 96, 96);
+            padding-left: 4px;
+
+        }
+
+        .profile-text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            padding-left: 4px;
+            cursor: pointer;
+        }
+
+        .profile-text-1,
+        .class-6-7-left {
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .text-0 {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding-left: 4px;
+        }
+
+        .text-1 {
+            color: rgb(96, 96, 96);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+
+        }
+
+        .text-2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            padding-left: 8px;
+            color: rgb(96, 96, 96);
+        }
+
+        .text-3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* .comment-text:active {
+            border: none;
+        } */
+
+        .blue-tick-1-logo {
+            width: 20px;
+            border-radius: 20px;
+            margin: 0;
+        }
+
+        .three-dot-button {
+            background-color: white;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            border-color: black;
+            padding: 0;
+            width: 28px;
+            cursor: pointer;
+        }
+
+        .three-dot-button-logo {
+            width: 12px;
+        }
+
+        .three-dot-button:hover {
+            /* background-color: black; */
+            /* color: white; */
+            opacity: 0.4;
+        }
+
+        .comment-logo-button,
+        .air-plane-logo-button {
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            width: 38px;
+            opacity: 1;
+        }
+
+
+        .air-plane-logo-button:hover {
+            opacity: 0.4;
+        }
+
+        .comment-logo-button:hover {
+            opacity: 0.4;
+        }
+
+        .comment-logo {
+            width: 24px;
+        }
+
+        .air-plane-logo {
+            width: 40px;
+        }
+
+        .bookmark-logo {
+            width: 58px;
+        }
+
+
+        .resize-picture {
+            width: 470px;
+            border-radius: 6px;
+        }
+
+        .class-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .class-3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+
+        }
+
+        .class-3-left {
+            /* background-color: lightblue; */
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-left: 40px;
+        }
+
+        .class-3-right-bookmark-button {
+            background-color: lightpink;
+            border: none;
+            background-color: white;
+            margin-right: -24px;
+            cursor: pointer;
+        }
+
+        .class-3-right-bookmark-button:hover {
+            opacity: 0.4;
+        }
+
+        .class-4 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .class-5 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            line-height: 18px;
+            color: rgb(50, 50, 50);
+        }
+
+        .class-6 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            line-height: 18px;
+            color: rgb(120, 120, 120);
+            cursor: pointer;
+        }
+
+        .heart-logo-button {
+            width: 45px;
+            height: 45px;
+            border: none;
+            /*  */
+            background-color: white;
+            margin-left: -50px;
+            position: absolute;
+        }
+
+        /* .heart-logo-button:hover {
+            opacity: 0.4;
+        } */
+
+
+        .emoji-logo-button {
+            background-color: white;
+            border: none;
+            padding: 0;
+            display: felx;
+            align-items: center;
+            margin-top: 4px;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        .emoji-logo-button:hover {
+            opacity: 0.2;
+        }
+
+        /* .comment-emoji-button{
+            /* background-color: white; 
+        } */
+
+        .heart-logo-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .heart-logo-div-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .heart-logo {
+            width: 26px;
+            cursor: pointer;
+            position: absolute;
+            transition: width 0.15s;
+        }
+
+        .heart-logo:hover {
+            width: 33px;
+        }
+
+        .emoji-logo {
+            width: 15px;
+        }
+
+        .heart-logo-0-logo {
+            width: 16px;
+            opacity: 0.6;
+        }
+
+        .heart-logo-0-logo:hover {
+            opacity: 0.25;
+        }
+
+        .class-6-7 {
+            display: flex;
+            align-items: cneter;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        .class-6-7-left {
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        .class-6-7-middle {
+            font-family: Arial, Helvetica, sans-serif;
+            flex: 1;
+            font-size: 13px;
+        }
+
+        .class-6-7-right {
+            background-color: white;
+            border: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .class-7 {
+            display: flex;
+            align-items: center;
+        }
+
+        .class-7-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .class-7-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .textarea {
+            flex: 1;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            padding-right: 6px;
+            padding-top: 4px;
+            border: none;
+            margin: 0;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        .post {
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: rgb(0, 131, 212);
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+
+        .post:hover {
+            color: black;
+        }
+
+        .instagram-text-logo {
+            width: 110px;
+        }
+
+        .home-text {
+            font-weight: bold;
+        }
+
+        .home-text,
+        .tooltext {
+            font-family: Quicksand, Arial;
+            font-size: 15px;
+            font-weight: 500;
+            padding-left: 10px;
+            flex: 90px;
+        }
+
+        .home:hover .tooltext {
+            opacity: 1;
+        }
+
+        .sidebar-left {
+            /* background-color: lightpink; */
+            display: flex;
+            align-items: center;
+            padding-left: 22px;
+            padding-top: 30px;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-middle {
+            margin: 16px;
+            margin-top: 10px;
+            /* position: relative; */
+        }
+
+        .subsubhome,
+        .home {
+            height: 46px;
+            display: flex;
+            align-items: center;
+            /* background-color: lightpink; */
+            margin-bottom: 7px;
+            border-radius: 10px;
+            /* position: absolute; */
+        }
+
+        .home:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .subsubsubhome,
+        .subhome {
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 1px;
+            flex-direction: column;
+        }
+
+        .subsubsubhome {
+            margin-top: -3px;
+        }
+
+        .subsubhome {
+            margin-top: 36px;
+        }
+
+        .home-logo-button {
+            width: 34px;
+            position: absolute;
+        }
+
+        .home:hover .home-logo-button {
+            transition: 0.12s;
+            width: 36px;
+        }
+
+        .search-logo-button {
+            width: 29px;
+            /* padding-left:4px; */
+        }
+
+        .home:hover .search-logo-button {
+            transition: 0.12s;
+            width: 31px;
+        }
+
+        .explore-logo-button {
+            width: 25px;
+            /* padding-left: 6px; */
+        }
+
+        .home:hover .explore-logo-button {
+            transition: 0.12s;
+            width: 27px;
+        }
+
+        .reels-logo-button {
+            width: 35px;
+        }
+
+        .home:hover .reels-logo-button {
+            transition: 0.12s;
+            width: 37px;
+        }
+
+        .message-logo-button {
+            width: 26px;
+        }
+
+        .home:hover .message-logo-button {
+            transition: 0.12s;
+            width: 28px;
+        }
+
+        .create-logo-button {
+            width: 21px;
+        }
+
+        .home:hover .create-logo-button {
+            transition: 0.12s;
+            width: 23px;
+        }
+
+        .more-logo-button {
+            margin-top: 4px;
+            width: 21px;
+            height: 24px;
+            margin-top: -1px;
+        }
+
+        .home:hover .more-logo-button {
+            transition: 0.12s;
+            width: 23px;
+            /* height: 25px; */
+        }
+
+        .profile-logo-menu-button {
+            width: 28px;
+            border-radius: 14px;
+        }
+
+        .home:hover .profile-logo-menu-button {
+            width: 29px;
+            border-radius: 14.5px;
+        }
+
+        /**********************************************************/
+
+        .right-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+            cursor: pointer;
+        }
+
+        /* .right-header-left {
+            background-color: lightblue;
+        } */
+
+        .right-header-middle {
+            /* background-color: lightpink; */
+            flex: 1;
+            padding-left: 18px;
+        }
+
+        /* .right-header-right {
+            background-color: lightblue;
+        } */
+
+        .right-header-profile {
+            width: 57px;
+            border-radius: 28.5px;
+        }
+
+        .right-header-profile-text-1 {
+            font-family: Roboto, Arial;
+            font-weight: 500;
+            font-size: 14px;
+            color: rgb(50, 50, 50);
+        }
+
+        .right-header-profile-text-2 {
+            font-family: Roboto, Arial;
+            font-weight: 400;
+            font-size: 14px;
+            color: rgb(96, 96, 96);
+        }
+
+        .right-header-right {
+            font-family: Roboto, Arial;
+            font-weight: 500;
+            font-size: 12px;
+            color: #0095F6;
+            cursor: pointer;
+
+        }
+
+        .right-header-right:hover {
+            opacity: 0.9;
+            color: black;
+        }
+
+        .suggetion-right-middle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            /* background-color: lightpink; */
+        }
+
+        .suggetion-text {
+            font-family: Roboto, Arial;
+            color: rgb(96, 96, 96);
+            font-size: 14px;
+        }
+
+        .see-all-text {
+            font-family: Roboto, Arial;
+            font-size: 12px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .see-all-text:hover {
+            transition: all 0.15s;
+            opacity: 0.4;
+            color: grey
+        }
+
+        .suggetions {
+            display: flex;
+            flex-direction: column;
+            /* margin-left: 6px; */
+            margin-top: 10px;
+        }
+
+        .first-suggetion {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin-bottom: 18px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .suggetion-left {
+            width: 30px;
+        }
+
+        .suggetion-middle {
+            flex: 1;
+            /* background-color: lightpink; */
+
+        }
+
+        .suggetion-right {
+            /* background-color: rgb(230, 255, 2); */
+            font-family: Roboto, Arial;
+            font-size: 12px;
+            font-weight: 500;
+            color: #0095F6;
+            cursor: pointer;
+        }
+
+        .suggetion-right:hover {
+            opacity: 0.9;
+            color: black;
+        }
+
+        .dc-logo {
+            width: 32px;
+            border-radius: 16px;
+        }
+
+        .suggetion-profile-name {
+            padding-left: 10px;
+            font-family: Roboto, Arial;
+            font-size: 14.4px;
+            font-weight: 500;
+        }
+
+        .suggetion-profile-data {
+            padding-left: 10px;
+            font-family: Roboto, Arial;
+            font-size: 12px;
+            font-weight: 400;
+            color: gray;
+        }
+
+        .description-1,
+        .description {
+            font-family: Roboto, Arial;
+            color: rgb(195, 195, 195);
+            margin-top: 18px;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .description {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-part">
+        <div class="sidebar">
+            <div class="sidebar-left">
+                <img class="instagram-text-logo" src="image/instagram-text-logo-2.png">
+            </div>
+            <div class="sidebar-middle">
+                <div class="home">
+                    <!-- <div class="logo-absolute"> -->
+                    <div class="subhome">
+                        <img class="home-logo-button" src="image/icons8-home-48 (1).png">
+                    </div>
+                    <div class="tooltext">
+                        Home
+                    </div>
+                    <!-- </div> -->
+
+                </div>
+                <div class="home">
+                    <div class="subhome">
+                        <img class="search-logo-button" src="image/search-logo.webp">
+                    </div>
+                    <div class="tooltext">
+                        Search
+                    </div>
+                </div>
+                <div class="home">
+                    <div class="subhome">
+                        <img class="explore-logo-button" src="image/explore-logo-2.png">
+                    </div>
+                    <div class="tooltext">
+                        Explore
+                    </div>
+                </div>
+                <div class="home">
+                    <div class="subhome">
+                        <img class="reels-logo-button" src="image/reels-2.png">
+                    </div>
+                    <div class="tooltext">
+                        Reels
+                    </div>
+                </div>
+                <div class="home">
+                    <div class="subhome">
+                        <img class="message-logo-button" src="image/message.png">
+                    </div>
+                    <div class="tooltext">
+                        Messages
+                    </div>
+                </div>
+                <div class="home">
+                    <div class="subhome">
+                        <img class="message-logo-button" src="image/Like Heart.png">
+                    </div>
+                    <div class="tooltext">
+                        Notification
+                    </div>
+                </div>
+                <div class="home">
+                    <div class="subhome">
+                        <img class="create-logo-button" src="image/create.png">
+                    </div>
+                    <div class="tooltext">
+                        Create
+                    </div>
+                </div>
+                <div class="home">
+                    <div class="subhome">
+                        <img class="profile-logo-menu-button" src="image/profile-picture.jpg">
+                    </div>
+                    <div class="tooltext">
+                        Profile
+                    </div>
+                </div>
+                <div class="home">
+                    <div class="subhome">
+                        <img class="more-logo-button" src="image/menu.png">
+                    </div>
+                    <div class="tooltext">
+                        More
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="left">
+            <div class="header">
+                <div>
+                    <button class="photo-button">
+                        <img class="photoshop" src="image/apple-logo-3.jpg">
+                    </button>
+                    <div class="text">
+                        Apple
+                    </div>
+                </div>
+                <div>
+                    <button class="photo-button">
+                        <img class="photoshop" src="image/google-logo.jpg">
+                    </button>
+                    <div class="text">
+                        Google
+                    </div>
+                </div>
+                <div>
+                    <button class="photo-button">
+                        <img class="photoshop" src="image/nature.jpg">
+                    </button>
+                    <div class="text">
+                        Nature
+                    </div>
+                </div>
+                <div>
+                    <button class="photo-button">
+                        <img class="photoshop" src="image/marvel.jpg">
+                    </button>
+                    <div class="text">
+                        Marvel
+                    </div>
+                </div>
+                <div>
+                    <button class="photo-button">
+                        <img class="photoshop" src="image/github.jpg">
+                    </button>
+                    <div class="text">
+                        GithubProjects
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="article">
+                    <div class="class-1">
+                        <div class="class-1-left">
+                            <button class="profile-logo-button">
+                                <img class="profile-logo" src="image/apple-logo.jpg">
+                            </button>
+                            <div>
+                                <div class="text-0">
+                                    <div class="profile-text">
+                                        apple
+                                    </div>
+                                    <div class="text">
+                                        <img class="blue-tick-1-logo" src="image/blue-tick-2.jpg">
+                                    </div>
+                                    <div class="text-1">
+                                        &#x2022; 1 d
+                                    </div>
+                                </div>
+                                <div class="text-2-2">
+                                    <div class="text-2">
+                                        france &#x2022; pecific ocean
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <button class="three-dot-button">
+                                &#x2022;&#x2022;&#x2022;
+                            </button>
+                        </div>
+                    </div>
+                    <div class="class-2">
+                        <img class="resize-picture" src="image/space.jpg">
+                    </div>
+                    <div class="class-3">
+                        <div class="class-3-left">
+                            <div class="heart-logo-div">
+                                <button class="heart-logo-button">
+                                    <div class="heart-logo-div-div">
+                                        <img class="heart-logo" src="image/Like Heart.png">
+                                    </div>
+                                </button>
+                            </div>
+                            <button class="comment-logo-button">
+                                <img class="comment-logo" src="image/comment-logo-1.png">
+                            </button>
+                            <button class="air-plane-logo-button">
+                                <img class="air-plane-logo" src="image/airplane-2.jpg">
+                            </button>
+                        </div>
+                        <button class="class-3-right-bookmark-button">
+                            <img class="bookmark-logo" src="image/bookmark-logo.png">
+                        </button>
+                    </div>
+                    <div class="class-4">
+                        576&#44;261 likes
+                    </div>
+                    <div class="class-5">
+                        <span class="profile-text-1">apple</span> "Everything in nature invites us constantly to be what
+                        we are&#46;"
+                    </div>
+                    <div class="class-6">
+                        View all 1&#44;166 comments
+                    </div>
+                    <div class="class-6-7">
+                        <div class="class-6-7-left">
+                            manoj_dhundhalva
+                        </div>
+                        <div class="class-6-7-middle">
+                            Hello, Good Morning.
+                        </div>
+                        <button class="class-6-7-right">
+                            <img class="heart-logo-0-logo" src="image/heart-logo-0.webp">
+                        </button>
+                    </div>
+                    <div class="class-7">
+                        <div class="class-7-left">
+                            <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                        </div>
+                        <div class="class-7-right">
+                            <button class="post">
+                                Post
+                            </button>
+                            <button class="emoji-logo-button">
+                                <img class="emoji-logo" src="image/emoji-2.png">
+                            </button>
+                        </div>
+                    </div>
+                    <hr style="border-color:rgb(200,200,200);">
+                </div>
+                <div class="article">
+                    <div class="class-1">
+                        <div class="class-1-left">
+                            <button class="profile-logo-button">
+                                <img class="profile-logo" src="image/nature.jpg">
+                            </button>
+                            <div>
+                                <div class="text-0">
+                                    <div class="profile-text">
+                                        Nature
+                                    </div>
+                                    <div class="text">
+                                        <img class="blue-tick-1-logo" src="image/blue-tick-2.jpg">
+                                    </div>
+                                    <div class="text-1">
+                                        &#x2022; 1 d
+                                    </div>
+                                </div>
+                                <div class="text-2-2">
+                                    <div class="text-2">
+                                        france &#x2022; pecific ocean
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <button class="three-dot-button">
+                                &#x2022;&#x2022;&#x2022;
+                            </button>
+                        </div>
+                    </div>
+                    <div class="class-2">
+                        <img class="resize-picture" src="image/tapu.jpg">
+                    </div>
+                    <div class="class-3">
+                        <div class="class-3-left">
+                            <div class="heart-logo-div">
+                                <button class="heart-logo-button">
+                                    <div class="heart-logo-div-div">
+                                        <img class="heart-logo" src="image/Like Heart.png">
+                                    </div>
+                                </button>
+                            </div>
+                            <button class="comment-logo-button">
+                                <img class="comment-logo" src="image/comment-logo-1.png">
+                            </button>
+                            <button class="air-plane-logo-button">
+                                <img class="air-plane-logo" src="image/airplane-2.jpg">
+                            </button>
+                        </div>
+                        <button class="class-3-right-bookmark-button">
+                            <img class="bookmark-logo" src="image/bookmark-logo.png">
+                        </button>
+                    </div>
+                    <div class="class-4">
+                        110&#44;092 likes
+                    </div>
+                    <div class="class-5">
+                        <span class="profile-text-1">Nature</span> "Capturing moments is magical, colors change the mood
+                        so
+                        much&#46;"
+                        &#35;ShotoniPhone by Cagla P&#46; &#64;nurcaglapolat
+                    </div>
+                    <div class="class-6">
+                        View all 384 comments
+                    </div>
+                    <div class="class-6-7">
+                        <div class="class-6-7-left">
+                            manoj_dhundhalva
+                        </div>
+                        <div class="class-6-7-middle">
+                            Hello, Good Morning.
+                        </div>
+                        <button class="class-6-7-right">
+                            <img class="heart-logo-0-logo" src="image/heart-logo-0.webp">
+                        </button>
+                    </div>
+                    <div class="class-7">
+                        <div class="class-7-left">
+                            <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                        </div>
+                        <div class="class-7-right">
+                            <button class="post">
+                                Post
+                            </button>
+                            <button class="emoji-logo-button">
+                                <img class="emoji-logo" src="image/emoji-2.png">
+                            </button>
+                        </div>
+                    </div>
+                    <hr style="border-color:rgb(200,200,200);">
+                </div>
+                <div>
+                    content
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-header">
+                <div class="right-header-left">
+                    <img class="right-header-profile" src="image/profile-picture.jpg">
+                </div>
+                <div class="right-header-middle">
+                    <div class="right-header-profile-text-1">
+                        manoj_dhundhalva
+                    </div>
+                    <div class="right-header-profile-text-2">
+                        Manoj
+                    </div>
+                </div>
+                <div class="right-header-right">
+                    Switch
+                </div>
+            </div>
+            <div class="suggetion-right-middle">
+                <div class="suggetion-text">
+                    Suggested for you
+                </div>
+                <div class="see-all-text">
+                    See All
+                </div>
+            </div>
+            <div class="suggetions">
+                <div class="first-suggetion">
+                    <div class="suggetion-left">
+                        <img class="dc-logo" src="image/dc-logo.jpg">
+                    </div>
+                    <div class="suggetion-middle">
+                        <div class="suggetion-profile-name">
+                            dcoffials
+                        </div>
+                        <div class="suggetion-profile-data">
+                            Followed by world
+                        </div>
+                    </div>
+                    <div class="suggetion-right">
+                        Follow
+                    </div>
+                </div>
+                <div class="first-suggetion">
+                    <div class="suggetion-left">
+                        <img class="dc-logo" src="image/wildlife.jpg">
+                    </div>
+                    <div class="suggetion-middle">
+                        <div class="suggetion-profile-name">
+                            Wildlife
+                        </div>
+                        <div class="suggetion-profile-data">
+                            Followed by world
+                        </div>
+                    </div>
+                    <div class="suggetion-right">
+                        Follow
+                    </div>
+                </div>
+                <div class="first-suggetion">
+                    <div class="suggetion-left">
+                        <img class="dc-logo" src="image/music-is-life.jpg">
+                    </div>
+                    <div class="suggetion-middle">
+                        <div class="suggetion-profile-name">
+                            Music
+                        </div>
+                        <div class="suggetion-profile-data">
+                            Followed by world
+                        </div>
+                    </div>
+                    <div class="suggetion-right">
+                        Follow
+                    </div>
+                </div>
+                <div class="first-suggetion">
+                    <div class="suggetion-left">
+                        <img class="dc-logo" src="image/one-plus-3.jpg">
+                    </div>
+                    <div class="suggetion-middle">
+                        <div class="suggetion-profile-name">
+                            OnePlus
+                        </div>
+                        <div class="suggetion-profile-data">
+                            Followed by world
+                        </div>
+                    </div>
+                    <div class="suggetion-right">
+                        Follow
+                    </div>
+                </div>
+                <div class="first-suggetion">
+                    <div class="suggetion-left">
+                        <img class="dc-logo" src="image/samsung.jpg">
+                    </div>
+                    <div class="suggetion-middle">
+                        <div class="suggetion-profile-name">
+                            Samsungindia
+                        </div>
+                        <div class="suggetion-profile-data">
+                            Followed by world
+                        </div>
+                    </div>
+                    <div class="suggetion-right">
+                        Follow
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                About &#183; Help &#183; Press &#183; API &#183; Jobs &#183; Privacy
+                &#183; Items &#183; Location &#183; Language &#183; Meta Verified
+
+            </div>
+            <div class="description-1">
+                &#169; 2023 INSTAGRAM FROM META
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
